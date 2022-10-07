@@ -8,6 +8,7 @@ def get_icon(coords) -> str:
     # TEST
     if coords == [48.14244663381307, -2.8732976551510263]:
         temperature = 31
+        humidity = 102
 
     if temperature >= 30 and humidity > 100:
         icon_name = "cloud-sun-rain"
