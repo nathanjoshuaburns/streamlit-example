@@ -66,9 +66,7 @@ chart_data = pd.DataFrame(
 )
 
 st.line_chart(
-    data=chart_data,
-    x="Hours",
-    y="Price")
+    data=chart_data)
 
 # center on Liberty Bell, add marker
 m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=6)
