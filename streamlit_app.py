@@ -78,6 +78,7 @@ with col1:
     ...
 
     Finished doing stuff""")
+    
     with st.expander:
         previous_day_prices = get_previous_day_prices(selectedDate)
         previousDayFig = go.Figure()
