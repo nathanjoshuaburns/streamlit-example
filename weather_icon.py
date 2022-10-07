@@ -10,12 +10,12 @@ def get_icon(coords) -> str:
         temperature = 31
 
     if temperature >= 30 and humidity > 100:
-        icon_name = "facloud-sun-rain"
+        icon_name = "cloud-sun-rain"
     elif temperature >= 30:
-        icon_name = "fasun"
+        icon_name = "sun"
     elif humidity > 100:
-        icon_name = "facloud-rain"
+        icon_name = "cloud-rain"
     else:
-        icon_name = "facloud"
+        icon_name = "cloud"
 
     return icon_name
