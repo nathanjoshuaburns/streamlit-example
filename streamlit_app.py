@@ -7,8 +7,6 @@ import streamlit as st
 from datetime import time, datetime, timedelta
 import numpy as np
 import plotly.graph_objects as go
-from forecast_prices import get_forecast_prices
-from previous_day_prices import get_previous_day_prices
 from map import render_map
 from model_predictions import make_predictions
 
