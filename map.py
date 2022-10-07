@@ -26,7 +26,7 @@ def render_map(selected_date):
 
     for regionCoords in regionalCoords:
         # TODO get weather and calculate icon
-        iconName = get_icon(regionCoords, selectedDate)
+        iconName = get_icon(regionCoords, selected_date)
 
         folium.Marker(
             location=regionCoords,
