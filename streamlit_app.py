@@ -15,6 +15,8 @@ st.set_page_config(
         page_title="Price forecasting",
 )
 
+col1,buff, col2 =st.columns([2,.3,2])
+
 from streamlit_folium import st_folium
 import folium
 
@@ -68,28 +70,43 @@ testPrices = [
 52.013,
 47.004]
 
-forecast_prices = get_forecast_prices(selectedDate)
-previous_day_prices = get_previous_day_prices(selectedDate)
+with col1:
+    st.subheader("Expander example")
 
-forecastFig = go.Figure()
-forecastFig.add_trace(go.Scatter(x=hour, y=forecast_prices, name='Sample',
-                         line=dict(color='firebrick', width=4)))
+    st.write("""Doing stuff on every page load
 
-forecastFig.update_layout(title='Forecast price',
-                   xaxis_title='Hour',
-                   yaxis_title='Price')
+    ...
 
-st.plotly_chart(forecastFig, use_container_width=True)
+    Finished doing stuff""")
+    previous_day_prices = get_previous_day_prices(selectedDate)
+    previousDayFig = go.Figure()
+    previousDayFig.add_trace(go.Scatter(x=hour, y=previous_day_prices, name='Sample',
+                            line=dict(color='firebrick', width=4)))
 
-previousDayFig = go.Figure()
-previousDayFig.add_trace(go.Scatter(x=hour, y=previous_day_prices, name='Sample',
-                         line=dict(color='firebrick', width=4)))
+    previousDayFig.update_layout(title='Previous day',
+                    xaxis_title='Hour',
+                    yaxis_title='Price')
 
-previousDayFig.update_layout(title='Previous day',
-                   xaxis_title='Hour',
-                   yaxis_title='Price')
+    st.plotly_chart(previousDayFig, use_container_width=True)
+with col2:
+    st.subheader("Expander example")
 
-st.plotly_chart(previousDayFig, use_container_width=True)
+    st.write("""Doing stuff on every page load
+
+    ...
+
+    Finished doing stuff""")
+    forecast_prices = get_forecast_prices(selectedDate)
+
+    forecastFig = go.Figure()
+    forecastFig.add_trace(go.Scatter(x=hour, y=forecast_prices, name='Sample',
+                            line=dict(color='firebrick', width=4)))
+
+    forecastFig.update_layout(title='Forecast price',
+                    xaxis_title='Hour',
+                    yaxis_title='Price')
+
+    st.plotly_chart(forecastFig, use_container_width=True)
 
 regionalCoords = [
     [48.14244663381307, -2.8732976551510263],
