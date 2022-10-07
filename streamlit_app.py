@@ -30,6 +30,10 @@ timeOfDay = st.slider(
     value=time(12, 0),
     step=timedelta(minutes=60))
 
+selectedDate = st.date_input(
+    "Date",
+    datetime.date(2016, 7, 6))
+
 hour = ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
 samplePrices = [
 32.542,
