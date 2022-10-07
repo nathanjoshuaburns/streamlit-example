@@ -78,16 +78,17 @@ with col1:
     ...
 
     Finished doing stuff""")
-    previous_day_prices = get_previous_day_prices(selectedDate)
-    previousDayFig = go.Figure()
-    previousDayFig.add_trace(go.Scatter(x=hour, y=previous_day_prices, name='Sample',
-                            line=dict(color='firebrick', width=4)))
+    with st.expander:
+        previous_day_prices = get_previous_day_prices(selectedDate)
+        previousDayFig = go.Figure()
+        previousDayFig.add_trace(go.Scatter(x=hour, y=previous_day_prices, name='Sample',
+                                line=dict(color='firebrick', width=4)))
 
-    previousDayFig.update_layout(title='Previous day',
-                    xaxis_title='Hour',
-                    yaxis_title='Price')
+        previousDayFig.update_layout(title='Previous day',
+                        xaxis_title='Hour',
+                        yaxis_title='Price')
 
-    st.plotly_chart(previousDayFig, use_container_width=True)
+        st.plotly_chart(previousDayFig, use_container_width=True)
 with col2:
     st.subheader("Expander example")
 
@@ -96,17 +97,19 @@ with col2:
     ...
 
     Finished doing stuff""")
-    forecast_prices = get_forecast_prices(selectedDate)
 
-    forecastFig = go.Figure()
-    forecastFig.add_trace(go.Scatter(x=hour, y=forecast_prices, name='Sample',
-                            line=dict(color='firebrick', width=4)))
+    with st.expander:
+        forecast_prices = get_forecast_prices(selectedDate)
 
-    forecastFig.update_layout(title='Forecast price',
-                    xaxis_title='Hour',
-                    yaxis_title='Price')
+        forecastFig = go.Figure()
+        forecastFig.add_trace(go.Scatter(x=hour, y=forecast_prices, name='Sample',
+                                line=dict(color='firebrick', width=4)))
 
-    st.plotly_chart(forecastFig, use_container_width=True)
+        forecastFig.update_layout(title='Forecast price',
+                        xaxis_title='Hour',
+                        yaxis_title='Price')
+
+        st.plotly_chart(forecastFig, use_container_width=True)
 
 regionalCoords = [
     [48.14244663381307, -2.8732976551510263],
