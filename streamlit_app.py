@@ -61,9 +61,7 @@ df = pd.DataFrame(
 
 chart_data = pd.DataFrame(
     data=df,
-    columns=['a', 'b'],
-    index=[0]
-)
+    columns=['a'])
 
 st.line_chart(
     data=chart_data)
