@@ -30,7 +30,7 @@ def render_map(selected_date):
 
         folium.Marker(
             location=regionCoords,
-            icon=folium.Icon(color='lightgray', icon=iconName, icon_color='white', prefix='fa')   ).add_to(m)
+            icon=folium.Icon(color='lightgray', icon=iconName, icon_color='white', prefix='fa', tooltip=)   ).add_to(m)
 
     #for key, value in iconsDict.items():
     #    folium.Marker(
