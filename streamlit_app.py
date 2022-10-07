@@ -118,12 +118,17 @@ regionalCoords = [
 # center on France
 m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=6)
 
+iconsDict = {}
+
 for regionCoords in regionalCoords:
     # TODO get weather and calculate icon
     icon = get_icon(regionCoords)
+    iconsDict[regionCoords] = icon
+
+for key, value in iconsDict:
     folium.Marker(
-        location=regionCoords,
-        icon=folium.Icon(color='lightgray', icon=icon, icon_color='white', prefix='fa')
+        location=key,
+        icon=folium.Icon(color='lightgray', icon=value, icon_color='white', prefix='fa')
     ).add_to(m)
 
 # call to render Folium map in Streamlit
