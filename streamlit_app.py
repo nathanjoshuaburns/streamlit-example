@@ -120,8 +120,12 @@ iconsDict = {}
 
 for regionCoords in regionalCoords:
     # TODO get weather and calculate icon
-    icon = get_icon(regionCoords)
+    icon = get_icon(regionCoords, selectedDate)
     iconsDict[icon] = regionCoords
+
+    folium.Marker(
+        location=regionalCoords.item(),
+        icon=folium.Icon(color='lightgray', icon="cloud", icon_color='white', prefix='fa')#   ).add_to(m)
 
 #for key, value in iconsDict.items():
 #    folium.Marker(

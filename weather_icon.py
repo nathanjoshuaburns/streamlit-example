@@ -1,6 +1,6 @@
 import random
 
-def get_icon(coords) -> str:
+def get_icon(coords, selectedDate) -> str:
     icon_name = "cloud" # Default to cloud
     temperature = 0
     humidity = 0
