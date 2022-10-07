@@ -66,7 +66,7 @@ testPrices = [
 52.013,
 47.004]
 
-previous_day_prices, forecast_prices = make_predictions(selectedDate)
+forecast_prices, previous_day_prices = make_predictions(selectedDate)
 
 with col1:
     st.subheader("Previous day prices")
