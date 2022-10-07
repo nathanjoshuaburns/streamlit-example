@@ -50,13 +50,11 @@ def get_icon(coords, selectedDate) -> str:
     temperature = tempdict['temperature']
 
     icon_name = "cloud" # Default to cloud
-    if temperature >= 30 and humidity > 100:
+    if temperature >= 19 and humidity > 100:
         icon_name = "sun-o"
-    elif temperature >= 50:
-        icon_name = "fire"
-    elif temperature >= 30:
+    elif temperature >= 19:
         icon_name = "sun-o"
-    elif humidity > 100:
+    elif humidity > 80:
         icon_name = "tint"
     else:
         icon_name = "cloud"
