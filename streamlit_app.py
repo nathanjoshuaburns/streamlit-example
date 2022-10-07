@@ -8,7 +8,7 @@ from datetime import time, datetime, timedelta
 import numpy as np
 import plotly.graph_objects as go
 from weather_icon import get_icon
-from prices import get_prices
+from prices import get_forecast_prices, get_previous_day_prices
 
 st.set_page_config(
         page_title="Price forecasting",
@@ -67,10 +67,11 @@ testPrices = [
 52.013,
 47.004]
 
-forecastPrices = get_prices(selectedDate)
+forecast_prices = get_forecast_prices(selectedDate)
+previous_day_prices = get_previous_day_prices(selectedDate)
 
 forecastFig = go.Figure()
-forecastFig.add_trace(go.Scatter(x=hour, y=forecastPrices, name='Sample',
+forecastFig.add_trace(go.Scatter(x=hour, y=forecast_prices, name='Sample',
                          line=dict(color='firebrick', width=4)))
 
 forecastFig.update_layout(title='Forecast price',
@@ -80,7 +81,7 @@ forecastFig.update_layout(title='Forecast price',
 st.plotly_chart(forecastFig, use_container_width=True)
 
 previousDayFig = go.Figure()
-previousDayFig.add_trace(go.Scatter(x=hour, y=previousDayPrices, name='Sample',
+previousDayFig.add_trace(go.Scatter(x=hour, y=previous_day_prices, name='Sample',
                          line=dict(color='firebrick', width=4)))
 
 previousDayFig.update_layout(title='Previous day',
