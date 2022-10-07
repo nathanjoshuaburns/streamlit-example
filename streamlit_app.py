@@ -125,7 +125,7 @@ for regionCoords in regionalCoords:
 
     folium.Marker(
         location=regionalCoords.item(),
-        icon=folium.Icon(color='lightgray', icon="cloud", icon_color='white', prefix='fa')#   ).add_to(m)
+        icon=folium.Icon(color='lightgray', icon="cloud", icon_color='white', prefix='fa')   ).add_to(m)
 
 #for key, value in iconsDict.items():
 #    folium.Marker(
