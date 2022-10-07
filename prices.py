@@ -1,6 +1,6 @@
 import datetime
 import random
-from typing import List, Tuple
+from typing import List
 
 def get_previous_day_prices(date: datetime.date) -> List[float]:
     # TODO
