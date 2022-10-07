@@ -11,11 +11,13 @@ def get_icon(coords) -> str:
         humidity = 102
 
     if temperature >= 30 and humidity > 100:
-        icon_name = "cloud-sun-rain"
+        icon_name = "sun-o"
+    elif temperature >= 50:
+        icon_name = "fire"
     elif temperature >= 30:
         icon_name = "sun-o"
     elif humidity > 100:
-        icon_name = "cloud-rain"
+        icon_name = "tint"
     else:
         icon_name = "cloud"
 
