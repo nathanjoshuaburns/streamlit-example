@@ -1,6 +1,6 @@
 import random
 from meteostat import Point, Hourly
-from datetime import datetime
+from datetime import datetime, date
 import pandas as pd
 
 
@@ -16,8 +16,10 @@ import pandas as pd
 
 def get_icon(coords, selectedDate) -> str:
 
+    selectedDateAsDateTime = datetime.combine(selectedDate, datetime.min.time())
+
     point = Point(coords[0], coords[1])
-    df = Hourly(point, selectedDate, selectedDate).fetch()
+    df = Hourly(point, selectedDateAsDateTime, selectedDateAsDateTime).fetch()
     humidity = df.rhum[0]
     temperature = df.temp[0]
 
