@@ -12,6 +12,7 @@ from model_predictions import make_predictions
 
 st.set_page_config(
         page_title="Price forecasting",
+        layout="wide"
 )
 
 
