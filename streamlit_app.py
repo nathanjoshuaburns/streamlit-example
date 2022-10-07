@@ -41,7 +41,7 @@ st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
     .encode(x='x:Q', y='y:Q'))
 
 # center on Liberty Bell, add marker
-m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=4)
+m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=6)
 folium.Marker(
     [46.6714327602744, 2.5419523299087947], 
     popup="France", 
