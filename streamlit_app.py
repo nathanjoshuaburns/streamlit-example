@@ -5,6 +5,7 @@ import math
 import pandas as pd
 import streamlit as st
 from datetime import time, datetime, timedelta
+import numpy as np
 
 st.set_page_config(
         page_title="Price forecasting",
@@ -55,13 +56,9 @@ sampleData = {
 "22":52.013,
 "23":47.004}
 
-df = pd.DataFrame(
-    data=sampleData,
-    index=[0])
-
 chart_data = pd.DataFrame(
-    data=df,
-    columns=['a'])
+    np.random.randn(20, 3),
+    columns=['a', 'b', 'c'])
 
 st.line_chart(
     data=chart_data)
