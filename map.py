@@ -23,9 +23,7 @@ def render_map(selected_date):
     folium.Marker(
             location=[48.14244663381307, -2.8732976551510263],
             icon=folium.Icon(color='lightgray', icon="cloud", icon_color='white', prefix='fa')   ).add_to(m)
-
-#gettempandhumid(48.8567, 2.3522, datetime(2015,1,1,12,0,0))
-
+    
     for regionCoords in regionalCoords:
         # TODO get weather and calculate icon
         iconName = get_icon(regionCoords, selected_date)

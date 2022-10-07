@@ -15,7 +15,7 @@ import pandas as pd
 #gettempandhumid(48.8567, 2.3522, datetime(2015,1,1,12,0,0))
 
 def get_icon(coords, selectedDate) -> str:
-
+    
     selectedDateAsDateTime = datetime.combine(selectedDate, datetime.min.time())
 
     point = Point(coords[0], coords[1])
