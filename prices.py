@@ -1,7 +1,8 @@
 import datetime
 import random
+from typing import List
 
-def get_prices(date: datetime.date) -> float[]:
+def get_prices(date: datetime.date) -> List[float]:
     # TODO
     # test data
 
