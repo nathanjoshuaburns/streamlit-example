@@ -70,7 +70,7 @@ testPrices = [
 forecast_prices, previous_day_prices = make_predictions(selectedDate)
 
 with col1:
-    st.subheader("Previous day prices for " + selectedDate)
+    st.subheader("Previous day prices for " + selectedDate.strftime("%d/%m/%Y"))
 
     # previous_day_prices = get_previous_day_prices(selectedDate)
     previousDayFig = go.Figure()
