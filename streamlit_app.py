@@ -78,6 +78,10 @@ testPrices = [
 47.004]
 
 forecast_prices, previous_day_prices = make_predictions(selectedDate)
+max_forecast = max(forecast_prices)
+max_previous = max(forecast_prices)
+max_value = max(max_forecast, max_previous)
+
 previous_day = selectedDate - timedelta(days=1)
 
 with col1:
@@ -90,7 +94,8 @@ with col1:
 
     previousDayFig.update_layout(title='',
                     xaxis_title='Hour',
-                    yaxis_title='Price')
+                    yaxis_title='Price',
+                    yaxis_range=(0, max_value))
 
     st.plotly_chart(previousDayFig, use_container_width=True)
 
@@ -105,7 +110,8 @@ with col2:
 
     forecastFig.update_layout(title='',
                     xaxis_title='Hour',
-                    yaxis_title='Price')
+                    yaxis_title='Price',
+                    yaxis_range=(0, max_value))
 
     st.plotly_chart(forecastFig, use_container_width=True)
 
