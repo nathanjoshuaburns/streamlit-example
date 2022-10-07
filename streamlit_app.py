@@ -8,7 +8,8 @@ from datetime import time, datetime, timedelta
 import numpy as np
 import plotly.graph_objects as go
 from weather_icon import get_icon
-from prices import get_forecast_prices, get_previous_day_prices
+from forecast_prices import get_forecast_prices
+from previous_day_prices import get_previous_day_prices
 
 st.set_page_config(
         page_title="Price forecasting",
