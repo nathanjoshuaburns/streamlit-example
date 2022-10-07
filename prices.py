@@ -18,4 +18,4 @@ def get_prices(date: datetime.date) -> Tuple[List[float], List[float]]:
         previous_day_prices.append(next_previous_day_price)
     # END OF GENERATE TEST DATA
 
-    return forecast_prices, previous_day_prices
+    return [forecast_prices, previous_day_prices]
