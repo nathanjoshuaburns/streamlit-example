@@ -85,9 +85,14 @@ st.plotly_chart(previousDayFig, use_container_width=True)
 # center on Liberty Bell, add marker
 m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=6)
 folium.Marker(
-    [46.6714327602744, 2.5419523299087947], 
+    location=[46.6714327602744, 2.5419523299087947], 
     popup="France", 
     tooltip="France"
+).add_to(m)
+
+folium.Marker(
+    location=[46.6714327602744, 2.5419523299087947],
+    icon=folium.Icon(color='lightgray', icon='cloud', prefix='fa')
 ).add_to(m)
 
 # call to render Folium map in Streamlit
