@@ -32,8 +32,11 @@ This tool predicts prices using previous price data and weather data
 #    step=timedelta(minutes=60))
 
 selectedDate = st.date_input(
-    "Enter date:",
-    datetime(2016, 7, 6))
+    label="Enter date:",
+    value=datetime(2016, 7, 6),
+    min_value=datetime(2016,1,1),
+    max_value=datetime(2016,12,31)
+    )
 
 hour = ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
 samplePrices = [
