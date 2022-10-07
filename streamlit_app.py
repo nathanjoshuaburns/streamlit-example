@@ -26,6 +26,13 @@ This tool predicts prices using previous price data and weather data
 
 """
 
+selectedDate = st.date_input(
+    label="Enter date:",
+    value=datetime(2016, 7, 6),
+    min_value=datetime(2016,1,1),
+    max_value=datetime(2016,12,31)
+    )
+
 col1, col2 =st.columns([2,2])
 
 #
@@ -35,13 +42,6 @@ col1, col2 =st.columns([2,2])
 #    max_value=time(23, 0),
 #    value=time(12, 0),
 #    step=timedelta(minutes=60))
-
-selectedDate = st.date_input(
-    label="Enter date:",
-    value=datetime(2016, 7, 6),
-    min_value=datetime(2016,1,1),
-    max_value=datetime(2016,12,31)
-    )
 
 hour = ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
 testPrices = [
