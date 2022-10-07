@@ -68,9 +68,9 @@ testPrices = [
 47.004]
 
 forecast_prices, previous_day_prices = make_predictions(selectedDate)
+previous_day = selectedDate - timedelta(days=1)
 
 with col1:
-    previous_day = selectedDate - timedelta(days=1)
     st.subheader("Previous day prices for " + previous_day.strftime("%d/%m/%Y"))
 
     # previous_day_prices = get_previous_day_prices(selectedDate)
@@ -104,7 +104,7 @@ with mapBufferLeft:
     st.write("")
 
 with mapColumn:
-    st.subheader("Previous day weather")
+    st.subheader("Weather for " + previous_day.strftime("%d/%m/%Y"))
     render_map(selectedDate)
 
 with mapBufferRight:
