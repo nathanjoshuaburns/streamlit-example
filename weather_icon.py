@@ -3,6 +3,8 @@ def get_icon(coords) -> str:
     temperature = 0
     humidity = 0
 
+    print(coords)
+
     # TEST
     if coords == [48.14244663381307, -2.8732976551510263]:
         temperature = 31
