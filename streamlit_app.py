@@ -71,14 +71,8 @@ testPrices = [
 47.004]
 
 with col1:
-    st.subheader("Expander example")
+    st.subheader("Previous day prices")
 
-    st.write("""Doing stuff on every page load
-
-    ...
-
-    Finished doing stuff""")
-    
     with st.expander:
         previous_day_prices = get_previous_day_prices(selectedDate)
         previousDayFig = go.Figure()
@@ -90,14 +84,9 @@ with col1:
                         yaxis_title='Price')
 
         st.plotly_chart(previousDayFig, use_container_width=True)
+
 with col2:
-    st.subheader("Expander example")
-
-    st.write("""Doing stuff on every page load
-
-    ...
-
-    Finished doing stuff""")
+    st.subheader("Forecast prices")
 
     with st.expander:
         forecast_prices = get_forecast_prices(selectedDate)
