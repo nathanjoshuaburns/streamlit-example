@@ -32,7 +32,7 @@ This tool predicts prices using previous price data and weather data
 #    step=timedelta(minutes=60))
 
 selectedDate = st.date_input(
-    "Date",
+    "Enter date:",
     datetime(2016, 7, 6))
 
 hour = ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
@@ -62,15 +62,25 @@ samplePrices = [
 52.013,
 47.004]
 
-fig = go.Figure()
-fig.add_trace(go.Scatter(x=hour, y=samplePrices, name='Sample',
+forecastFig = go.Figure()
+forecastFig.add_trace(go.Scatter(x=hour, y=samplePrices, name='Sample',
                          line=dict(color='firebrick', width=4)))
 
-fig.update_layout(title='Test',
+forecastFig.update_layout(title='Forecast price',
                    xaxis_title='Hour',
                    yaxis_title='Price')
 
-st.plotly_chart(fig, use_container_width=True)
+st.plotly_chart(forecastFig, use_container_width=True)
+
+previousDayFig = go.Figure()
+previousDayFig.add_trace(go.Scatter(x=hour, y=samplePrices, name='Sample',
+                         line=dict(color='firebrick', width=4)))
+
+previousDayFig.update_layout(title='Previous day',
+                   xaxis_title='Hour',
+                   yaxis_title='Price')
+
+st.plotly_chart(previousDayFig, use_container_width=True)
 
 # center on Liberty Bell, add marker
 m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=6)
