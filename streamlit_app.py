@@ -75,7 +75,7 @@ with col1:
     # previous_day_prices = get_previous_day_prices(selectedDate)
     previousDayFig = go.Figure()
     previousDayFig.add_trace(go.Scatter(x=hour, y=previous_day_prices, name='Sample',
-                            line=dict(color='firebrick', width=4)))
+                            line=dict(color='lightgreen', width=4)))
 
     previousDayFig.update_layout(title='',
                     xaxis_title='Hour',
