@@ -6,6 +6,7 @@ import pandas as pd
 import streamlit as st
 from datetime import time, datetime, timedelta
 import numpy as np
+from torch import CharTensor
 
 st.set_page_config(
         page_title="Price forecasting",
@@ -61,6 +62,9 @@ chart_data = pd.DataFrame(
     columns=['a', 'b', 'c'])
 
 st.line_chart(
+    data=chart_data)
+
+st.plotly_chart(
     data=chart_data)
 
 # center on Liberty Bell, add marker
