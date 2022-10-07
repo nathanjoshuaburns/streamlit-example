@@ -73,8 +73,7 @@ testPrices = [
 with col1:
     st.subheader("Previous day prices")
 
-    #previous_day_prices = get_previous_day_prices(selectedDate)
-    previous_day_prices = []
+    previous_day_prices = get_previous_day_prices(selectedDate)
     previousDayFig = go.Figure()
     previousDayFig.add_trace(go.Scatter(x=hour, y=previous_day_prices, name='Sample',
                             line=dict(color='firebrick', width=4)))
@@ -88,8 +87,7 @@ with col1:
 with col2:
     st.subheader("Forecast prices")
 
-    # forecast_prices = get_forecast_prices(selectedDate)
-    forecast_prices = []
+    forecast_prices = get_forecast_prices(selectedDate)
 
     forecastFig = go.Figure()
     forecastFig.add_trace(go.Scatter(x=hour, y=forecast_prices, name='Sample',
