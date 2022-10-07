@@ -1,5 +1,6 @@
 from streamlit_folium import st_folium
 import folium
+from weather_icon import get_icon
 
 def render_map(selected_date):
 
