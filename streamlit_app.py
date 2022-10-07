@@ -79,7 +79,7 @@ testPrices = [
 
 forecast_prices, previous_day_prices = make_predictions(selectedDate)
 max_forecast = max(forecast_prices)
-max_previous = max(forecast_prices)
+max_previous = max(previous_day_prices)
 max_value = max(max_forecast, max_previous)
 
 previous_day = selectedDate - timedelta(days=1)
