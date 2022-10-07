@@ -55,7 +55,9 @@ sampleData = {
 "22":52.013,
 "23":47.004}
 
-df = pd.DataFrame(sampleData)
+df = pd.DataFrame(
+    data=sampleData,
+    index=[0])
 
 chart_data = pd.DataFrame(
     data=df,
