@@ -7,6 +7,7 @@ import streamlit as st
 from datetime import time, datetime, timedelta
 import numpy as np
 import plotly.graph_objects as go
+from weather_icon import get_icon
 
 st.set_page_config(
         page_title="Price forecasting",
@@ -99,13 +100,15 @@ regionalCoords = [
     [48.76520936142879, 5.440004567794441]
 ]
 
-# center on Liberty Bell, add marker
+# center on France
 m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=6)
 
 for regionCoords in regionalCoords:
+    # TODO get weather and calculate icon
+    icon = get_icon(regionCoords)
     folium.Marker(
         location=regionCoords,
-        icon=folium.Icon(color='lightgray', icon='cloud', prefix='fa')
+        icon=folium.Icon(color='lightgray', icon=icon, prefix='fa')
     ).add_to(m)
 
 # call to render Folium map in Streamlit
