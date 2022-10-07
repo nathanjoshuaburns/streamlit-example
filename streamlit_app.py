@@ -106,7 +106,6 @@ m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=6)
 for regionCoords in regionalCoords:
     # TODO get weather and calculate icon
     icon = get_icon(regionCoords)
-    st.write(icon)
     folium.Marker(
         location=regionCoords,
         icon=folium.Icon(color='lightgray', icon=icon, icon_color='white', prefix='fa')
