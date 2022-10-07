@@ -67,7 +67,7 @@ testPrices = [
 52.013,
 47.004]
 
-forecastPrices, previousDayPrices = get_prices(selectedDate)
+forecastPrices = get_prices(selectedDate)
 
 forecastFig = go.Figure()
 forecastFig.add_trace(go.Scatter(x=hour, y=forecastPrices, name='Sample',
