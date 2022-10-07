@@ -7,7 +7,7 @@ def get_icon(coords) -> str:
 
     # Generate test data
     temperature = random.randint(16, 60)
-    humidity = random.randint(50, 15)
+    humidity = random.randint(50, 150)
 
     if temperature >= 30 and humidity > 100:
         icon_name = "sun-o"
