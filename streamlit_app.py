@@ -41,11 +41,11 @@ st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
     .encode(x='x:Q', y='y:Q'))
 
 # center on Liberty Bell, add marker
-m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
+m = folium.Map(location=[48.8566, 2.3522], zoom_start=16)
 folium.Marker(
-    [39.949610, -75.150282], 
-    popup="Liberty Bell", 
-    tooltip="Liberty Bell"
+    [48.8566, 2.3522], 
+    popup="Paris", 
+    tooltip="Paris"
 ).add_to(m)
 
 # call to render Folium map in Streamlit
