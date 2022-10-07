@@ -111,3 +111,6 @@ with mapColumn:
 with mapBufferRight:
     st.write("")
 
+featureOne = requests.get("https://corporatebs-generator.sameerkumar.website/")
+featureTwo = requests.get("https://corporatebs-generator.sameerkumar.website/")
+featureThree = requests.get("https://corporatebs-generator.sameerkumar.website/")
