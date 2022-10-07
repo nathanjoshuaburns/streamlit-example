@@ -39,3 +39,14 @@ for curr_point_num in range(total_points):
 st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
     .mark_circle(color='#0068c9', opacity=0.5)
     .encode(x='x:Q', y='y:Q'))
+
+# center on Liberty Bell, add marker
+m = folium.Map(location=[39.949610, -75.150282], zoom_start=16)
+folium.Marker(
+    [39.949610, -75.150282], 
+    popup="Liberty Bell", 
+    tooltip="Liberty Bell"
+).add_to(m)
+
+# call to render Folium map in Streamlit
+st_data = st_folium(m, width = 725)
