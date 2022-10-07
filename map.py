@@ -15,27 +15,27 @@ def render_map(selected_date):
     [45.40905180537371, 4.326744974917686],
     [47.12840752815982, 5.067991805604691],
     [48.76520936142879, 5.440004567794441]
-]
-    # center on France
-m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=6)
-
-folium.Marker(
-        location=[48.14244663381307, -2.8732976551510263],
-        icon=folium.Icon(color='lightgray', icon="cloud", icon_color='white', prefix='fa')   ).add_to(m)
-
-for regionCoords in regionalCoords:
-    # TODO get weather and calculate icon
-    iconName = get_icon(regionCoords, selectedDate)
+    ]
+        # center on France
+    m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=6)
 
     folium.Marker(
-        location=regionCoords,
-        icon=folium.Icon(color='lightgray', icon=iconName, icon_color='white', prefix='fa')   ).add_to(m)
+            location=[48.14244663381307, -2.8732976551510263],
+            icon=folium.Icon(color='lightgray', icon="cloud", icon_color='white', prefix='fa')   ).add_to(m)
 
-#for key, value in iconsDict.items():
-#    folium.Marker(
-#        location=value,
-#        icon=folium.Icon(color='lightgray', icon=key, icon_color='white', prefix='fa')
-#    ).add_to(m)
+    for regionCoords in regionalCoords:
+        # TODO get weather and calculate icon
+        iconName = get_icon(regionCoords, selectedDate)
 
-# call to render Folium map in Streamlit
-st_data = st_folium(m, width = 725)
+        folium.Marker(
+            location=regionCoords,
+            icon=folium.Icon(color='lightgray', icon=iconName, icon_color='white', prefix='fa')   ).add_to(m)
+
+    #for key, value in iconsDict.items():
+    #    folium.Marker(
+    #        location=value,
+    #        icon=folium.Icon(color='lightgray', icon=key, icon_color='white', prefix='fa')
+    #    ).add_to(m)
+
+    # call to render Folium map in Streamlit
+    st_data = st_folium(m, width = 725)
