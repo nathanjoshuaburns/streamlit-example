@@ -1,4 +1,20 @@
 import random
+from meteostat import Point, Hourly
+from datetime import datetime
+import pandas as pd
+
+
+
+def gettempandhumid(long, lat, day):
+    point = Point(long, lat)
+    df = Hourly(point, day, day).fetch()
+    rhum = df.rhum[0]
+    temp = df.temp[0]
+    return {'humidity': rhum, 'temperature': temp}
+
+
+
+gettempandhumid(48.8567, 2.3522, datetime(2015,1,1,12,0,0))
 
 def get_icon(coords, selectedDate) -> str:
     icon_name = "cloud" # Default to cloud

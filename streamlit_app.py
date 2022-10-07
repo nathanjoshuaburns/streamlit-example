@@ -10,6 +10,7 @@ import plotly.graph_objects as go
 from forecast_prices import get_forecast_prices
 from previous_day_prices import get_previous_day_prices
 from map import render_map
+from model_predictions import make_predictions
 
 st.set_page_config(
         page_title="Price forecasting",
@@ -67,10 +68,12 @@ testPrices = [
 52.013,
 47.004]
 
+previous_day_prices, forecast_prices = make_predictions(selectedDate)
+
 with col1:
     st.subheader("Previous day prices")
 
-    previous_day_prices = get_previous_day_prices(selectedDate)
+    # previous_day_prices = get_previous_day_prices(selectedDate)
     previousDayFig = go.Figure()
     previousDayFig.add_trace(go.Scatter(x=hour, y=previous_day_prices, name='Sample',
                             line=dict(color='firebrick', width=4)))
@@ -84,7 +87,7 @@ with col1:
 with col2:
     st.subheader("Forecast prices")
 
-    forecast_prices = get_forecast_prices(selectedDate)
+    # forecast_prices = get_forecast_prices(selectedDate)
 
     forecastFig = go.Figure()
     forecastFig.add_trace(go.Scatter(x=hour, y=forecast_prices, name='Sample',
