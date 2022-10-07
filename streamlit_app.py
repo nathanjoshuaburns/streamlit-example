@@ -92,7 +92,7 @@ with col2:
     forecastFig.add_trace(go.Scatter(x=hour, y=forecast_prices, name='Sample',
                             line=dict(color='dodgerblue', width=4)))
 
-    forecastFig.update_layout(title='Forecast price',
+    forecastFig.update_layout(title='',
                     xaxis_title='Hour',
                     yaxis_title='Price')
 
