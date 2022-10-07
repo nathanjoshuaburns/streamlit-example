@@ -58,8 +58,9 @@ sampleData = {
 df = pd.DataFrame(sampleData)
 
 chart_data = pd.DataFrame(
-    df,
-    columns=['a', 'b']
+    data=df,
+    columns=['a', 'b'],
+    index=[0]
 )
 
 st.line_chart(
