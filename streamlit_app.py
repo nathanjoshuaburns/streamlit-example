@@ -85,7 +85,7 @@ with col1:
     st.plotly_chart(previousDayFig, use_container_width=True)
 
 with col2:
-    st.subheader("Forecast prices")
+    st.subheader("Forecast prices for " + selectedDate.strftime("%d/%m/%Y"))
 
     # forecast_prices = get_forecast_prices(selectedDate)
 
