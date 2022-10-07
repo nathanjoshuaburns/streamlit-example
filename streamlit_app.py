@@ -98,7 +98,7 @@ with col2:
 
     st.plotly_chart(forecastFig, use_container_width=True)
 
-mapBufferLeft, mapColumn, mapBufferRight = st.columns([1,6,1])
+mapBufferLeft, mapColumn, mapBufferRight = st.columns([2,6,2])
 with mapBufferLeft:
     st.write("")
 
