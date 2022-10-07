@@ -22,8 +22,10 @@ This tool predicts prices using previous price data and weather data
 
 
 timeOfDay = st.slider(
-    "Time of day:",
-    value=(time(0, 0), time(23, 45)))
+    label="Time of day:",
+    min_value=time(0, 0),
+    max_value=time(23, 0),
+    value=time(12, 0))
 
 # center on Liberty Bell, add marker
 m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=6)
