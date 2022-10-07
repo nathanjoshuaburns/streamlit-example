@@ -3,7 +3,7 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
-from datetime import time
+from datetime import time, datetime, timedelta
 
 st.set_page_config(
         page_title="Price forecasting",
@@ -25,7 +25,8 @@ timeOfDay = st.slider(
     label="Time of day:",
     min_value=time(0, 0),
     max_value=time(23, 0),
-    value=time(12, 0))
+    value=time(12, 0),
+    step=timedelta(60))
 
 # center on Liberty Bell, add marker
 m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=6)
