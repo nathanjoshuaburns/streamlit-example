@@ -29,9 +29,9 @@ Key features include:
 
 """
 
-st.write(featureOne.json()['phrase'])
-st.write(featureTwo.json()['phrase'])
-st.write(featureThree.json()['phrase'])
+st.write("- " + featureOne.json()['phrase'])
+st.write("- " + featureTwo.json()['phrase'])
+st.write("- " + featureThree.json()['phrase'])
 
 selectedDate = st.date_input(
     label="Choose a date:",
