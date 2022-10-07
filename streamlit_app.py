@@ -9,6 +9,7 @@ import numpy as np
 import plotly.graph_objects as go
 from map import render_map
 from model_predictions import make_predictions
+import requests
 
 st.set_page_config(
         page_title="Price forecasting",
@@ -109,3 +110,4 @@ with mapColumn:
 
 with mapBufferRight:
     st.write("")
+

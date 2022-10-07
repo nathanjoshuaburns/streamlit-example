@@ -8,3 +8,4 @@ meteostat
 joblib
 sklearn
 statsmodels
+requests
