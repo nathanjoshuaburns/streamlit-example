@@ -124,7 +124,7 @@ for regionCoords in regionalCoords:
     iconsDict[icon] = regionCoords
 
     folium.Marker(
-        location=regionalCoords.item(),
+        location=[48.14244663381307, -2.8732976551510263],
         icon=folium.Icon(color='lightgray', icon="cloud", icon_color='white', prefix='fa')   ).add_to(m)
 
 #for key, value in iconsDict.items():
