@@ -82,34 +82,28 @@ previousDayFig.update_layout(title='Previous day',
 
 st.plotly_chart(previousDayFig, use_container_width=True)
 
-brittanyCoords = [48.14244663381307, -2.8732976551510263]
-normandyCoords = [49.01203292123912, 0.15538061753084026]
-hautsDeFranceCoords = [49.97415434164336, 2.8261190286911333]
-ileDeFranceCoords = [48.71212499407923, 2.5523685049282405]
-centreValDeLoireCoords = [47.439278433081036, 1.7071332414921612]
-nouvelleAquitaineCoords = [45.10197257034414, 0.09584511043028773]
-occitaniaCoords = [43.58037639713084, 2.169507159438924]
-coteDazurCoords = [43.83998471721191, 6.162653828372608]
-rhoneCoords = [45.40905180537371, 4.326744974917686]
-comteCoords = [47.12840752815982, 5.067991805604691]
-grandEstCoords = [48.76520936142879, 5.440004567794441]
+regionalCoords = [
+    [48.14244663381307, -2.8732976551510263],
+    [49.01203292123912, 0.15538061753084026],
+    [49.97415434164336, 2.8261190286911333],
+    [48.71212499407923, 2.5523685049282405],
+    [47.439278433081036, 1.7071332414921612],
+    [45.10197257034414, 0.09584511043028773],
+    [43.58037639713084, 2.169507159438924],
+    [43.83998471721191, 6.162653828372608],
+    [45.40905180537371, 4.326744974917686],
+    [47.12840752815982, 5.067991805604691],
+    [48.76520936142879, 5.440004567794441]
+]
 
 # center on Liberty Bell, add marker
 m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=6)
-folium.Marker(
-    location=[46.6714327602744, 2.5419523299087947], 
-    popup="France", 
-    tooltip="France"
-).add_to(m)
 
-folium.Marker(
-    location=brittanyCoords,
-    icon=folium.Icon(color='lightgray', icon='cloud', prefix='fa')
-).add_to(m)
-folium.Marker(
-    location=normandyCoords,
-    icon=folium.Icon(color='lightgray', icon='cloud', prefix='fa')
-).add_to(m)
+for regionCoords in regionalCoords:
+    folium.Marker(
+        location=regionCoords,
+        icon=folium.Icon(color='lightgray', icon='cloud', prefix='fa')
+    ).add_to(m)
 
 # call to render Folium map in Streamlit
 st_data = st_folium(m, width = 725)
