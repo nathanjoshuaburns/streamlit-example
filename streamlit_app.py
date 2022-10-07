@@ -15,7 +15,7 @@ st.set_page_config(
         page_title="Price forecasting",
 )
 
-col1,buff, col2 =st.columns([2,.3,2])
+col1,buff, col2 =st.columns([2,2])
 
 from streamlit_folium import st_folium
 import folium
