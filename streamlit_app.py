@@ -23,12 +23,13 @@ This tool predicts prices using previous price data and weather data
 
 """
 
-timeOfDay = st.slider(
-    label="Time of day:",
-    min_value=time(0, 0),
-    max_value=time(23, 0),
-    value=time(12, 0),
-    step=timedelta(minutes=60))
+#
+#timeOfDay = st.slider(
+#    label="Time of day:",
+#    min_value=time(0, 0),
+#    max_value=time(23, 0),
+#    value=time(12, 0),
+#    step=timedelta(minutes=60))
 
 selectedDate = st.date_input(
     "Date",
