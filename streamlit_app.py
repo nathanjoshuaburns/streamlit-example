@@ -57,8 +57,13 @@ sampleData = {
 
 df = pd.DataFrame(sampleData)
 
+chart_data = pd.DataFrame(
+    df,
+    columns=['a', 'b']
+)
+
 st.line_chart(
-    data=df,
+    data=chart_data,
     x="Hours",
     y="Price")
 
