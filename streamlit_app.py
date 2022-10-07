@@ -103,6 +103,7 @@ with mapBufferLeft:
     st.write("")
 
 with mapColumn:
+    st.subheader("Previous day weather")
     render_map(selectedDate)
 
 with mapBufferRight:
