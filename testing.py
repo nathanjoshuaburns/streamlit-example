@@ -9,11 +9,11 @@ from joblib import dump, load
 from time_series_checks import time_series_analysis
 
 
-calibration_window = 364*3# 3 years (in days)
-dataset = 'FR'
+calibration_window = 364*3 # 3 years (in days)
+dataset = 'data_with_weather'
 
 # IF YEARS_TEST, REMOVE DAY_DAHEAD
-day_ahead = None # '2016-12-01'
+day_ahead =  '2016-12-01'
 years_test = 1 #30/364
 use_trained_model = False
 recalibrate = False

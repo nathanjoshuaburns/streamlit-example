@@ -6,8 +6,8 @@ import pandas as pd
 
 day_ahead = '2016-12-01'
 
-def make_predictions(day_ahead = day_ahead):
-    dataset = 'FR'
+def make_predictions(day_ahead):
+    dataset = 'data_with_weather'
     model = load(os.path.join('.', 'saved_models/model.joblib'))
     df_train, df_test = read_data(path=os.path.join('.', 'datasets'), dataset=dataset, years_test=None, begin_test_date=day_ahead, end_test_date=day_ahead)
 
