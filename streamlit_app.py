@@ -108,7 +108,7 @@ for regionCoords in regionalCoords:
     icon = get_icon(regionCoords)
     folium.Marker(
         location=regionCoords,
-        icon=folium.Icon(color='lightgray', icon=icon, prefix='fa')
+        icon=folium.Icon(color='lightgray', icon=icon, icon_color='white', prefix='fa')
     ).add_to(m)
 
 # call to render Folium map in Streamlit
