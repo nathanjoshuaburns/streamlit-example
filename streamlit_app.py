@@ -16,13 +16,22 @@ st.set_page_config(
         layout="wide"
 )
 
+featureOne = requests.get("https://corporatebs-generator.sameerkumar.website/")
+featureTwo = requests.get("https://corporatebs-generator.sameerkumar.website/")
+featureThree = requests.get("https://corporatebs-generator.sameerkumar.website/")
 
 """
 # Welcome to our Electricity Price Forecaster!
 
-This tool predicts prices using previous price data and weather data
+This tool predicts prices using previous price data and weather data.
+
+Key features include:
 
 """
+
+st.write(featureOne.json()['phrase'])
+st.write(featureTwo.json()['phrase'])
+st.write(featureThree.json()['phrase'])
 
 selectedDate = st.date_input(
     label="Choose a date:",
@@ -110,7 +119,3 @@ with mapColumn:
 
 with mapBufferRight:
     st.write("")
-
-featureOne = requests.get("https://corporatebs-generator.sameerkumar.website/")
-featureTwo = requests.get("https://corporatebs-generator.sameerkumar.website/")
-featureThree = requests.get("https://corporatebs-generator.sameerkumar.website/")
