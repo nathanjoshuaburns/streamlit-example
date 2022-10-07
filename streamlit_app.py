@@ -67,10 +67,10 @@ testPrices = [
 52.013,
 47.004]
 
-samplePrices = get_prices(selectedDate)
+forecastPrices, previousDayPrices = get_prices(selectedDate)
 
 forecastFig = go.Figure()
-forecastFig.add_trace(go.Scatter(x=hour, y=samplePrices, name='Sample',
+forecastFig.add_trace(go.Scatter(x=hour, y=forecastPrices, name='Sample',
                          line=dict(color='firebrick', width=4)))
 
 forecastFig.update_layout(title='Forecast price',
@@ -80,7 +80,7 @@ forecastFig.update_layout(title='Forecast price',
 st.plotly_chart(forecastFig, use_container_width=True)
 
 previousDayFig = go.Figure()
-previousDayFig.add_trace(go.Scatter(x=hour, y=samplePrices, name='Sample',
+previousDayFig.add_trace(go.Scatter(x=hour, y=previousDayPrices, name='Sample',
                          line=dict(color='firebrick', width=4)))
 
 previousDayFig.update_layout(title='Previous day',

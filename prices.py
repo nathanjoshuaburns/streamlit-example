@@ -1,15 +1,21 @@
 import datetime
 import random
-from typing import List
+from typing import List, Tuple
 
-def get_prices(date: datetime.date) -> List[float]:
+def get_prices(date: datetime.date) -> Tuple[List[float], List[float]]:
     # TODO
     # test data
+    
+    previous_day_prices = []
+    forecast_prices = []
 
-    test_prices = []
-
+    # START OF GENERATE TEST DATA
     for i in range(24):
-        next_test_price = random.uniform(10, 60)
-        test_prices.append(next_test_price)
+        next_forecast_price = random.uniform(10, 60)
+        forecast_prices.append(next_forecast_price)
 
-    return test_prices
+        next_previous_day_price = random.uniform(10, 60)
+        previous_day_prices.append(next_previous_day_price)
+    # END OF GENERATE TEST DATA
+
+    return forecast_prices
