@@ -6,7 +6,6 @@ import pandas as pd
 import streamlit as st
 from datetime import time, datetime, timedelta
 import numpy as np
-from torch import CharTensor
 
 st.set_page_config(
         page_title="Price forecasting",
