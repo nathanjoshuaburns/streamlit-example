@@ -123,7 +123,7 @@ iconsDict = {}
 for regionCoords in regionalCoords:
     # TODO get weather and calculate icon
     icon = get_icon(regionCoords)
-    iconsDict[regionCoords] = icon
+    iconsDict[icon] = regionCoords
 
 for key, value in iconsDict:
     folium.Marker(
