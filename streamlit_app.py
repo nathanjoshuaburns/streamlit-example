@@ -9,16 +9,10 @@ import folium
 
 
 """
-# Welcome to Streamlit!
+# Welcome to our Electricity Price Forecaster!
 
-First edit
+This tool predicts prices using previous price data and weather data
 
-Edit `/streamlit_app.py` to customize this app to your heart's desire :heart:
-
-If you have any questions, checkout our [documentation](https://docs.streamlit.io) and [community
-forums](https://discuss.streamlit.io).
-
-In the meantime, below is an example of what you can do with just a few lines of code:
 """
 
 st.set_page_config(
