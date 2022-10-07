@@ -15,8 +15,6 @@ st.set_page_config(
         page_title="Price forecasting",
 )
 
-col1, col2 =st.columns([2,2])
-
 from streamlit_folium import st_folium
 import folium
 
@@ -27,6 +25,8 @@ import folium
 This tool predicts prices using previous price data and weather data
 
 """
+
+col1, col2 =st.columns([2,2])
 
 #
 #timeOfDay = st.slider(
