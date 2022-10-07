@@ -26,7 +26,7 @@ timeOfDay = st.slider(
     min_value=time(0, 0),
     max_value=time(23, 0),
     value=time(12, 0),
-    step=timedelta(60))
+    step=timedelta(minutes=60))
 
 # center on Liberty Bell, add marker
 m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=6)
