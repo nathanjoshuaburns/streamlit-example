@@ -116,16 +116,17 @@ regionalCoords = [
 # center on France
 m = folium.Map(location=[46.6714327602744, 2.5419523299087947], zoom_start=6)
 
-iconsDict = {}
+folium.Marker(
+        location=[48.14244663381307, -2.8732976551510263],
+        icon=folium.Icon(color='lightgray', icon="cloud", icon_color='white', prefix='fa')   ).add_to(m)
 
 for regionCoords in regionalCoords:
     # TODO get weather and calculate icon
-    icon = get_icon(regionCoords, selectedDate)
-    iconsDict[icon] = regionCoords
+    iconName = get_icon(regionCoords, selectedDate)
 
     folium.Marker(
-        location=[48.14244663381307, -2.8732976551510263],
-        icon=folium.Icon(color='lightgray', icon="cloud", icon_color='white', prefix='fa')   ).add_to(m)
+        location=regionCoords,
+        icon=folium.Icon(color='lightgray', icon=iconName, icon_color='white', prefix='fa')   ).add_to(m)
 
 #for key, value in iconsDict.items():
 #    folium.Marker(
