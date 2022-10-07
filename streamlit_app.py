@@ -127,8 +127,8 @@ for regionCoords in regionalCoords:
 
 for key, value in iconsDict.items():
     folium.Marker(
-        location=key,
-        icon=folium.Icon(color='lightgray', icon=value, icon_color='white', prefix='fa')
+        location=value,
+        icon=folium.Icon(color='lightgray', icon=key, icon_color='white', prefix='fa')
     ).add_to(m)
 
 # call to render Folium map in Streamlit
