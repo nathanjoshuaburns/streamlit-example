@@ -8,6 +8,7 @@ from datetime import time, datetime, timedelta
 import numpy as np
 import plotly.graph_objects as go
 from weather_icon import get_icon
+from prices import get_prices
 
 st.set_page_config(
         page_title="Price forecasting",
@@ -40,7 +41,7 @@ selectedDate = st.date_input(
     )
 
 hour = ['0','1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20','21','22','23']
-samplePrices = [
+testPrices = [
 32.542,
 21.549,
 15.711,
@@ -65,6 +66,8 @@ samplePrices = [
 49.373,
 52.013,
 47.004]
+
+samplePrices = get_prices(selectedDate)
 
 forecastFig = go.Figure()
 forecastFig.add_trace(go.Scatter(x=hour, y=samplePrices, name='Sample',
