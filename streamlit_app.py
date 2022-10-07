@@ -4,6 +4,10 @@ import math
 import pandas as pd
 import streamlit as st
 
+st.set_page_config(
+        page_title="Price forecasting",
+)
+
 from streamlit_folium import st_folium
 import folium
 
@@ -14,10 +18,6 @@ import folium
 This tool predicts prices using previous price data and weather data
 
 """
-
-st.set_page_config(
-        page_title="Price forecasting",
-)
 
 
 with st.echo(code_location='below'):
