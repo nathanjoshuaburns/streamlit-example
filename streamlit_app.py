@@ -24,7 +24,7 @@ This tool predicts prices using previous price data and weather data
 """
 
 selectedDate = st.date_input(
-    label="Enter date:",
+    label="Choose a date:",
     value=datetime(2016, 7, 6),
     min_value=datetime(2016,1,1),
     max_value=datetime(2016,12,31)
