@@ -1,4 +1,5 @@
 from collections import namedtuple
+from random import sample
 import altair as alt
 import math
 import pandas as pd
@@ -54,8 +55,10 @@ sampleData = {
 "22":52.013,
 "23":47.004}
 
+df = pd.DataFrame(sampleData)
+
 st.line_chart(
-    data=sampleData,
+    data=df,
     x="Hours",
     y="Price")
 
