@@ -73,33 +73,31 @@ testPrices = [
 with col1:
     st.subheader("Previous day prices")
 
-    with st.expander:
-        previous_day_prices = get_previous_day_prices(selectedDate)
-        previousDayFig = go.Figure()
-        previousDayFig.add_trace(go.Scatter(x=hour, y=previous_day_prices, name='Sample',
-                                line=dict(color='firebrick', width=4)))
+    previous_day_prices = get_previous_day_prices(selectedDate)
+    previousDayFig = go.Figure()
+    previousDayFig.add_trace(go.Scatter(x=hour, y=previous_day_prices, name='Sample',
+                            line=dict(color='firebrick', width=4)))
 
-        previousDayFig.update_layout(title='Previous day',
-                        xaxis_title='Hour',
-                        yaxis_title='Price')
+    previousDayFig.update_layout(title='Previous day',
+                    xaxis_title='Hour',
+                    yaxis_title='Price')
 
-        st.plotly_chart(previousDayFig, use_container_width=True)
+    st.plotly_chart(previousDayFig, use_container_width=True)
 
 with col2:
     st.subheader("Forecast prices")
 
-    with st.expander:
-        forecast_prices = get_forecast_prices(selectedDate)
+    forecast_prices = get_forecast_prices(selectedDate)
 
-        forecastFig = go.Figure()
-        forecastFig.add_trace(go.Scatter(x=hour, y=forecast_prices, name='Sample',
-                                line=dict(color='firebrick', width=4)))
+    forecastFig = go.Figure()
+    forecastFig.add_trace(go.Scatter(x=hour, y=forecast_prices, name='Sample',
+                            line=dict(color='firebrick', width=4)))
 
-        forecastFig.update_layout(title='Forecast price',
-                        xaxis_title='Hour',
-                        yaxis_title='Price')
+    forecastFig.update_layout(title='Forecast price',
+                    xaxis_title='Hour',
+                    yaxis_title='Price')
 
-        st.plotly_chart(forecastFig, use_container_width=True)
+    st.plotly_chart(forecastFig, use_container_width=True)
 
 regionalCoords = [
     [48.14244663381307, -2.8732976551510263],
